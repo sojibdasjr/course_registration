@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 
-const CourseCart = () => {
+const CourseCart = ({ cartCourse, courseCredit, remainingCredit }) => {
+  if (remainingCredit <= 0) {
+    toast.error("You have no more Credit");
+  }
   return (
-    <div className="md:flex  md:w-1/3 border border-red-400">
-      <h1>Course Cart</h1>
+    <div className=" md:w-1/4  border ps-2 ">
+      <h1 className="font-bold text-slate-700 text-2xl ">
+        Credit Hour Remaining: {remainingCredit}
+      </h1>
+      <hr className="my-2" />
+      <h1 className="text-2xl font-bold mb-4">Course Name</h1>
+      <div>
+        {cartCourse.map((course) => (
+          <li key={course.id}>{course.title}</li>
+        ))}
+      </div>
+      <hr className="my-4" />
+      <h1>Total Creadit Hour : {courseCredit} </h1>
+      <hr className="my-4" />
+      <h1>Total Price: </h1>
     </div>
   );
 };
