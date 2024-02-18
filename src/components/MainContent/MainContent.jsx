@@ -4,7 +4,7 @@ import CourseCart from "../CourseCart/CourseCart";
 
 const MainContent = () => {
   return (
-    <div className="flex gap-4 max-w-7xl mx-auto mt-4">
+    <div className="md:flex gap-4 max-w-7xl mx-auto mt-4 px-2">
       <CourseContent />
       <CourseCart />
     </div>
