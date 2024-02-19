@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoBookOutline } from "react-icons/io5";
 import { MdOutlineAttachMoney } from "react-icons/md";
 
 const SingleCourse = ({ content, handleCourseCart, handlecredit }) => {
-  const { id, image, title, description, price, credit } = content;
+  const { image, title, description, price, credit } = content;
   const handleCreditReadint = () => {
     handleCourseCart(content);
-    handlecredit(credit);
+    handlecredit(credit, price);
   };
 
   return (
